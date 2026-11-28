@@ -2,7 +2,7 @@
 
 更新日：2026-11-27。現行リポジトリの実装を説明します。公開中のWebアプリへの反映・Google上の実動作とは区別してください。
 
-日常操作はHTML版の[和文編](manual-ja.html)／[English edition](manual-en.html)を参照してください。アプリ上部の「取扱説明書」は、現在のUI言語に対応する版を新しいタブで開きます。
+日常操作はHTML版の[取扱説明書 / User Guide](index.html)を参照してください。日本語・Englishは同じページで切り替えます。ブラウザーの優先言語で自動表示し、上部のセレクターで手動変更もできます。アプリ上部の「取扱説明書」は、現在のUI言語に対応する版を新しいタブで開きます。
 
 保存先は[TourDB](https://docs.google.com/spreadsheets/d/1UGHv-DeBq2LEuLolF7hGVXXkZTBBlo1hE25Gy2_3s-M/edit)です。他のスプレッドシートや認証プロジェクトは使用しません。
 
