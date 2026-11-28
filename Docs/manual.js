@@ -3,6 +3,7 @@
   const container = document.getElementById('guide-body');
   const english = document.getElementById('guide-english');
   const selector = document.getElementById('guide-language');
+  const toolbar = selector.parentElement;
   const japanese = document.createElement('template');
   japanese.innerHTML = container.innerHTML;
   const storageKey = 'sl-tourfinder-manual-language';
@@ -30,6 +31,7 @@
       container.replaceChildren((language === 'en' ? english : japanese).content.cloneNode(true));
       currentLanguage = language;
     }
+    container.querySelector('.guide-heading').appendChild(toolbar);
     container.lang = language;
     document.documentElement.lang = language;
     document.title = language === 'ja' ? 'SL Tour Finder — 取扱説明書' : 'SL Tour Finder — User Guide';
@@ -38,7 +40,7 @@
   selector.addEventListener('change', () => {
     const section = [...container.querySelectorAll('main > section')].find(node => {
       const rect = node.getBoundingClientRect();
-      return rect.top <= 100 && rect.bottom > 100;
+      return rect.top <= 24 && rect.bottom > 24;
     });
     const anchor = section ? '#' + section.id : location.hash;
     try { localStorage.setItem(storageKey, selector.value); } catch (_) {}
@@ -50,6 +52,7 @@
       history.replaceState(null, '', url.href);
     } catch (_) {}
     render(anchor);
+    selector.focus({ preventScroll: true });
   });
   window.addEventListener('languagechange', () => {
     if (selector.value === 'auto') render(location.hash);
