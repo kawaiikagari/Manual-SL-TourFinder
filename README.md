@@ -2,8 +2,10 @@
 
 公開URL：<https://kawaiikagari.github.io/Manual-SL-TourFinder/>
 
-日本語とEnglishを同じページで表示します。ブラウザーの優先言語で自動表示し、上部の「Language / 言語」で自動・日本語・Englishを切り替えられます。
+ルートのindex.html自体に本文を配置しているため、/docs/や/Docs/へ転送しません。日本語・Englishは同じページ内のLanguage / 言語で切り替えます。内容は左から配置し、左右の余白は16〜32px程度です。
 
-SL-TourFinder の `docs/index.html`・`docs/manual.js`・`docs/manual.css` と旧URL用の `docs/manual-ja.html`・`docs/manual-en.html` を、このリポジトリの `Docs/` へ同期します。アプリのソース・設定・DBデータはコピーしません。既存の補足Markdown資料は保持しています。
+正本はSL-TourFinder/docsです。取説HTML・CSS・JSと運用手順Markdownだけを、このリポジトリの小文字docsへコピーします。アプリソース・DBデータ・認証設定やセキュリティレビュー報告はコピーしません。
 
-GitHub Pages の公開元は `main` ブランチの `/(root)` です。ルートの `index.html` が `Docs/index.html` へ移動し、クエリーとセクションの位置を保持します。旧和文・英文URLも統合ページへ移動します。`Docs` の大文字・小文字を変更しないでください。`.nojekyll` により静的ファイルをそのまま公開します。
+ルートindex.htmlは正本docs/index.htmlと同じ本文で、CSSとJSの参照先だけdocs/を付けています。正本を更新してからコピー・入口の再生成を行います。Pagesの公開元がmain /docsでもmain /(root)でも本文を表示できます。双方の公開元へ.nojekyllを配置します。
+
+アプリ側に設定する取説URLは1つです。言語別URLの登録は不要です。
